@@ -10,6 +10,9 @@ on:
 jobs:
   e2e-windows-destkop:
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write # needed to update commit status (pending/failure/sucess)
+      checks: write # as documented in https://github.com/mikepenz/action-junit-report?tab=readme-ov-file#pr-run-permissions
     strategy:
       fail-fast: false
       matrix:
